@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI , Request
 from mockdata import products
 app = FastAPI()
 
@@ -22,4 +22,13 @@ def get_one_product(product_id:int):
 
     return{
         "Error":"Product not found for this ID."
+    }
+
+#query params# 
+@app.get("/greet")
+def greet(request:Request):
+    query_params = dict(request.query_params)
+    print(query_params)
+    return {
+        "greet": f" Hello {query_params.get("name")},Your age is {query_params.get("age")} "
     }

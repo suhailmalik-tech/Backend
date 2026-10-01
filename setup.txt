@@ -1,0 +1,5 @@
+1st : check Python Version / pip Version
+2nd : create a virtual env for fastapi using - python -m venv env
+3rd : activate virtual env using /  ./env./Scripts/activate
+4th : Install FastApi using pip
+5th : Start building API's
